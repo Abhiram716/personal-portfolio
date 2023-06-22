@@ -1,18 +1,28 @@
-import { Client as Styletron } from "styletron-engine-atomic";
-import { Provider as StyletronProvider } from "styletron-react";
-import { LightTheme, BaseProvider } from "baseui";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import CssBaseline from "@mui/material/CssBaseline";
+import React from "react";
+import { ThemeProvider, createTheme } from "@mui/material";
+import theme from "../page-layouts/theme";
 
-const Index = () => {
-    const engine = new Styletron();
-    return {
-        <StyletronProvider value={engine}>
-            <BaseProvider theme={LightTheme}>
-                <Block color={'red'}>
-                    mnskjsd
-                </Block>
-            </BaseProvider>
-        </StyletronProvider >
-    }
+const index = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Container
+        style={{
+          background: theme.palette.background.default,
+        }}
+        maxWidth={false}
+        disableGutters
+      >
+        <Box sx={{ height: "100vh", color: "white" }}>
+          <h1>Hello I am Abhiram Kantipudi</h1>
+        </Box>
+      </Container>
+    </ThemeProvider>
+  );
+  // <div>index</div>
 };
 
-export default Index;
+export default index;
