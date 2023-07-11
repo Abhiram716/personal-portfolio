@@ -1,28 +1,16 @@
-import Box from "@mui/material/Box";
+import { ThemeProvider } from "@mui/material";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
 import React from "react";
-import { ThemeProvider, createTheme } from "@mui/material";
-import theme from "../page-layouts/theme";
+import theme from "../theme/theme";
 
-const index = () => {
+const Index = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container
-        style={{
-          background: theme.palette.background.default,
-        }}
-        maxWidth={false}
-        disableGutters
-      >
-        <Box sx={{ height: "100vh", color: "white" }}>
-          <h1>Hello I am Abhiram Kantipudi</h1>
-        </Box>
-      </Container>
+      <Container maxWidth={false}></Container>
     </ThemeProvider>
   );
-  // <div>index</div>
 };
 
-export default index;
+export default Index;
