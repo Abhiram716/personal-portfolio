@@ -1,20 +1,22 @@
 import {
   AppBar,
-  Toolbar,
   Box,
+  Toolbar,
   Typography,
   useMediaQuery,
   useTheme,
-  ButtonBase,
-  ButtonGroup,
 } from "@mui/material";
 import React, { useState } from "react";
+import HeaderItem from "./HeaderItem";
 
 const Header = () => {
+
   const [activeItem, setActiveItem] = useState("");
+  
   const handleItemClick = (item) => {
     setActiveItem(item);
   };
+
   const matchXs = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const theme = useTheme();
 
@@ -39,110 +41,26 @@ const Header = () => {
             </Typography>
           )}
           <Toolbar sx={{ mb: 3, mt: 3 }}>
-            <ButtonGroup>
-              <ButtonBase
-                disableRipple
-                onClick={() => handleItemClick("home")}
-                sx={{ cursor: "pointer" }}
-              >
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Typography
-                    variant="h6"
-                    color={
-                      activeItem === "home"
-                        ? theme.palette.primary.main
-                        : "white"
-                    }
-                  >
-                    HOME
-                  </Typography>
-                  <Box
-                    sx={{
-                      display: activeItem === "home" ? "block" : "none",
-                      height: "3px",
-                      width: "10px",
-                      bgcolor: "white",
-                    }}
-                  />
-                </Box>
-              </ButtonBase>
-              <ButtonBase
-                sx={{ ml: 4, cursor: "pointer" }}
-                disableRipple
-                onClick={() => handleItemClick("work")}
-              >
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Typography
-                    variant="h6"
-                    color={
-                      activeItem === "work"
-                        ? theme.palette.primary.main
-                        : "white"
-                    }
-                  >
-                    WORK
-                  </Typography>
-                  <Box
-                    sx={{
-                      display: activeItem === "work" ? "block" : "none",
-                      height: "3px",
-                      width: "10px",
-                      bgcolor: "white",
-                    }}
-                  />
-                </Box>
-              </ButtonBase>
-              <ButtonBase
-                sx={{
-                  ml: 4,
-                  cursor: "pointer",
-                }}
-                disableRipple
-                onClick={() => handleItemClick("about")}
-              >
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Typography
-                    variant="h6"
-                    color={
-                      activeItem === "about"
-                        ? theme.palette.primary.main
-                        : "white"
-                    }
-                  >
-                    ABOUT
-                  </Typography>
-                  <Box
-                    sx={{
-                      display: activeItem === "about" ? "block" : "none",
-                      height: "3px",
-                      width: "10px",
-                      bgcolor: "white",
-                    }}
-                  />
-                </Box>
-              </ButtonBase>
-            </ButtonGroup>
+            <HeaderItem
+              activeItem={activeItem}
+              headerItemName={"HOME"}
+              headerItemState={"home"}
+              handleItemClick={handleItemClick}
+            />
+            <HeaderItem
+              activeItem={activeItem}
+              headerItemName={"WORK"}
+              headerItemState={"work"}
+              handleItemClick={handleItemClick}
+              sx={{ ml: 4 }}
+            />
+            <HeaderItem
+              activeItem={activeItem}
+              headerItemName={"ABOUT"}
+              headerItemState={"about"}
+              handleItemClick={handleItemClick}
+              sx={{ ml: 4 }}
+            />
             {!matchXs && <Box sx={{ mr: 14 }}></Box>}
           </Toolbar>
         </Toolbar>
