@@ -15,16 +15,10 @@ const Typography = {
     },
   },
   h5: {
-    "@media (max-width:800px)": {
-      fontSize: "1.25rem",
-    },
     "@media (max-width:600px)": {
-      fontSize: "1rem",
+      fontSize: "1.2rem",
     },
   },
-  // subtitle1: {
-  //   fontSize: "1.7rem",
-  // },
 };
 
 export default Typography;
