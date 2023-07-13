@@ -10,12 +10,28 @@ import React, { useState } from "react";
 import HeaderItem from "./HeaderItem";
 
 const Header = () => {
-
   const [activeItem, setActiveItem] = useState("");
-  
+
   const handleItemClick = (item) => {
     setActiveItem(item);
   };
+
+  const headerItemProps = [
+    {
+      headerItemName: "HOME",
+      headerItemState: "home",
+    },
+    {
+      headerItemName: "WORK",
+      headerItemState: "work",
+      sx: { ml: 4 },
+    },
+    {
+      headerItemName: "ABOUT",
+      headerItemState: "about",
+      sx: { ml: 4 },
+    },
+  ];
 
   const matchXs = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const theme = useTheme();
@@ -41,26 +57,15 @@ const Header = () => {
             </Typography>
           )}
           <Toolbar sx={{ mb: 3, mt: 3 }}>
-            <HeaderItem
-              activeItem={activeItem}
-              headerItemName={"HOME"}
-              headerItemState={"home"}
-              handleItemClick={handleItemClick}
-            />
-            <HeaderItem
-              activeItem={activeItem}
-              headerItemName={"WORK"}
-              headerItemState={"work"}
-              handleItemClick={handleItemClick}
-              sx={{ ml: 4 }}
-            />
-            <HeaderItem
-              activeItem={activeItem}
-              headerItemName={"ABOUT"}
-              headerItemState={"about"}
-              handleItemClick={handleItemClick}
-              sx={{ ml: 4 }}
-            />
+            {headerItemProps.map((item, index) => (
+              <HeaderItem
+                key={index}
+                activeItem={activeItem}
+                handleItemClick={handleItemClick}
+                {...item}
+              />
+            ))}
+
             {!matchXs && <Box sx={{ mr: 14 }}></Box>}
           </Toolbar>
         </Toolbar>
