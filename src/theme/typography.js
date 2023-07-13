@@ -7,13 +7,24 @@ const Typography = {
     "Arial",
     "sans-serif",
   ].join(","),
-  h1: {
-    fontSize: "3rem",
-    fontWeight:"900"
+  h2: {
+    fontWeight: "900",
+    fontSize: "4rem",
+    "@media (max-width:800px)": {
+      fontSize: "3rem",
+    },
   },
-  subtitle1: {
-    fontSize: "1rem"
-  }
+  h5: {
+    "@media (max-width:800px)": {
+      fontSize: "1.25rem",
+    },
+    "@media (max-width:600px)": {
+      fontSize: "1rem",
+    },
+  },
+  // subtitle1: {
+  //   fontSize: "1.7rem",
+  // },
 };
 
 export default Typography;

@@ -1,41 +1,44 @@
-import { Container, Typography, Box, useMediaQuery } from "@mui/material";
+import { Box, Container, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
+import avatarShapes from "../../assets/avatar-shapes.svg";
 
 const HomePage = () => {
-  
   const matchXs = useMediaQuery((theme) => theme.breakpoints.down("md"));
-  
+
   return (
     <Container
+      disableGutters={true}
       maxWidth={false}
       sx={{
-        // bgcolor: "blue",
-        display: matchXs ? "flex" : "block",
-        flexDirection : matchXs ? "column" : "none",
-        justifyContent: matchXs ? "center" : "none",
-        alignItems : matchXs ? "center" : "none",
-        pt: { lg: 27, xs: 20 },
-        pl: { lg: 27 },
-        pr: { lg: 27 },
-        pb: { lg: 37, xs: 27 },
+        bgcolor: "blue",
+        display: "flex",
+        flexDirection: matchXs ? "column" : "row",
+        justifyContent: matchXs ? "center" : "space-between",
+        // justifyContent: matchXs ? "column" : "flex-end",
+        alignItems: "center",
+        pt: { xs: 15, sm: 20 },
+        pl: { xs: 10 },
+        pb: 27,
+        pr: 14,
       }}
-      disableGutters={true}
     >
-      <Box>
-        <Typography variant="h1" color={"white"}>
-          Frontend <Typography noWrap />
-          Developer
+      <Box sx={{ color: "white" }}>
+        <Typography variant="h2">
+          Frontend <Typography noWrap /> Developer.
         </Typography>
+        <Box sx={{ maxWidth: "550px", mt: 3 }}>
+          <Typography variant="h5">
+            I like to craft solid and scalable frontend products{" "}
+            {!matchXs && <Typography noWrap />}
+            with great user experiences.
+          </Typography>
+        </Box>
       </Box>
-      <Box
-      sx={{  width: "230px" }}
-      >
-        <Typography variant="subtitle1" color={"white"}>
-          I like to craft solid and scalable frontend products{" "}
-          {!matchXs && <Typography noWrap />}
-          with great user experiences.
-        </Typography>
+
+      <Box sx={{ width: { xs:"500px",sm:"600px"} }}>
+        <img src={avatarShapes} alt="" width="100%"/>
       </Box>
+      {/* { svg} */}
     </Container>
   );
 };
