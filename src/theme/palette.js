@@ -1,7 +1,3 @@
-const palette = {
-    primary: {
-        main:"#BC3CD8",
-    }
-};
+const palette = {};
 
 export default palette;
