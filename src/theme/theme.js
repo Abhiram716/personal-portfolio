@@ -3,6 +3,7 @@ import { createTheme } from "@mui/material/styles";
 import Components from "./overrides";
 import Typography from "./typograpgy";
 import palette from "./palette";
+import breakpoints from "./breakpoints";
 
 const theme = createTheme({
   palette: {
@@ -15,6 +16,9 @@ const theme = createTheme({
     ...Typography,
  
   },
+  breakpoints: {
+    ...breakpoints,
+  }
 });
 
 export default theme;
