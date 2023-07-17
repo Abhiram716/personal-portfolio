@@ -1,11 +1,4 @@
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { AppBar, Grid, Toolbar } from "@mui/material";
 import React, { useState } from "react";
 
 import HeaderItem from "./HeaderItem";
@@ -34,40 +27,34 @@ const Header = () => {
     },
   ];
 
-  const matchXs = useMediaQuery((theme) => theme.breakpoints.down("md"));
-  const theme = useTheme();
-
   return (
     <AppBar>
       <Toolbar
         sx={{
           background:
             "linear-gradient(180deg, #010208 16.39%, #010206 20.51%, #040008 24.79%, #010101 30.46%, #010101 34.11%, #010101 36.21%, #010101 100%)",
-          display: "flex",
-          justifyContent: matchXs ? "center" : "space-between",
+          pt: 3,
+          pb: 3,
         }}
       >
-        {!matchXs && (
-          <Typography
-            variant="h4"
-            sx={{ ml: 14, mb: 3, mt: 3 }}
-            color={theme.palette.primary.main}
-          >
-            Abhiram Kantipudi
-          </Typography>
-        )}
-        <Toolbar sx={{ mb: 3, mt: 3 }}>
+        <Grid
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          spacing={{ lg: 20, md: 15, sm: 15, xs: 4 }}
+        >
           {headerItemProps.map((item, index) => (
-            <HeaderItem
-              key={index}
-              activeItem={activeItem}
-              handleItemClick={handleItemClick}
-              {...item}
-            />
+            <Grid item>
+              <HeaderItem
+                key={index}
+                activeItem={activeItem}
+                handleItemClick={handleItemClick}
+                {...item}
+              />
+            </Grid>
           ))}
-
-          {!matchXs && <Box sx={{ mr: 14 }}></Box>}
-        </Toolbar>
+        </Grid>
       </Toolbar>
     </AppBar>
   );
