@@ -1,17 +1,12 @@
 const Typography = {
-  fontFamily: [
-    "Roboto",
-    "-apple-system",
-    "BlinkMacSystemFont",
-    '"Segoe UI"',
-    "Arial",
-    "sans-serif",
-  ].join(","),
-  h4: {
-    fontWeight: "900",
+  fontFamily: "'Poppins',sans-serif",
+
+  h2: {
+    fontFamily: "'kurale',sans-serif",
   },
-  h6: {
-    fontWeight: "900",
+
+  h4: {
+    fontFamily: "'kurale',sans-serif",
   },
 };
 
