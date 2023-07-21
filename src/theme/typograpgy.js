@@ -3,6 +3,9 @@ const Typography = {
 
   h2: {
     fontFamily: "'kurale',sans-serif",
+    "@media(max-width:600px)": {
+      fontSize: "2rem",
+    },
   },
 
   h4: {
