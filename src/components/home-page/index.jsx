@@ -24,7 +24,7 @@ const HomePage = () => {
         alignItems: "center",
         height: "100vh",
         color: "white",
-        overflow: matchMd ? "auto" : "hideen",
+        overflow: matchMd ? "auto" : "hidden",
         pt: { xs: 15, md: 10 },
         pl: { md: 15 },
         pr: { md: 10 },
