@@ -73,7 +73,7 @@ const HomePage = () => {
         </Grid>
       </Grid>
       <Grid item xs={12} sm={6} md={7}>
-        <Box sx={{ width: { xs: "350px", sm: "500px", md: "700px" } }}>
+        <Box sx={{ width: { xs: "350px", sm: "500px", md: "900px" } }}>
           <Lottie animationData={skillsAnimation} style={{ width: "100%" }} />
         </Box>
       </Grid>
