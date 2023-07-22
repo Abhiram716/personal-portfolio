@@ -1,4 +1,4 @@
-import { Box, Container, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Container, Grid, useMediaQuery, useTheme } from "@mui/material";
 import Lottie from "lottie-react";
 import React, { useRef } from "react";
 
@@ -22,55 +22,61 @@ const HomePage = () => {
         flexDirection: matchLg ? "column" : "row",
         justifyContent: matchLg ? "center" : "space-between",
         alignItems: "center",
-        height: "100vh",
         color: "white",
-        overflow: matchMd ? "auto" : "hidden",
+        minHeight: "100vh",
         pt: { xs: 15, md: 10 },
-        pl: { md: 15 },
-        pr: { md: 10 },
-        pb: 2,
+        pl: { lg: 2 },
+        pr: { lg: 2 },
       }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-        }}
+      <Grid
+        container
+        item
+        lg={4}
+        justifyContent="center"
+        alignItems="center"
+        textAlign="center"
+        sx={{ display: "flex", flexDirection: "column" }}
       >
-        <Box sx={{ width: { xs: "100px" } }}>
-          <Lottie
-            lottieRef={welcomeAnimationRef}
-            animationData={welcomeAnimation}
-            style={{ width: "100%" }}
-            initialSegment={[45, 90]}
-            onLoadedImages={() => {
-              welcomeAnimationRef.current?.setSpeed(0.5);
-            }}
-          />
+        <Grid item>
+          <Box sx={{ width: matchMd ? "100px" : "150px" }}>
+            <Lottie
+              lottieRef={welcomeAnimationRef}
+              animationData={welcomeAnimation}
+              style={{ width: "100%" }}
+              initialSegment={[45, 90]}
+              onLoadedImages={() => {
+                welcomeAnimationRef.current?.setSpeed(0.5);
+              }}
+            />
+          </Box>
+        </Grid>
+        <Grid item>
+          <FadeInTypography
+            duration={"1000"}
+            fromOpacity={"0"}
+            toOpacity={"1"}
+            variant={"h2"}
+            color={"white"}
+          >
+            Hello, I am Abhiram.
+          </FadeInTypography>
+        </Grid>
+        <Grid item>
+          <AnimateFromLeftToRight
+            variant={"h4"}
+            color={"white"}
+            sx={{ maxWidth: "400px", mt: 2 }}
+          >
+            Building websites one line of code at a time
+          </AnimateFromLeftToRight>
+        </Grid>
+      </Grid>
+      <Grid item xs={12} sm={6} md={7}>
+        <Box sx={{ width: { xs: "350px", sm: "500px", md: "700px" } }}>
+          <Lottie animationData={skillsAnimation} style={{ width: "100%" }} />
         </Box>
-        <FadeInTypography
-          duration={"1000"}
-          fromOpacity={"0"}
-          toOpacity={"1"}
-          variant={"h2"}
-          color={"white"}
-        >
-          Hello, I am Abhiram.
-        </FadeInTypography>
-        <AnimateFromLeftToRight
-          variant={"h4"}
-          color={"white"}
-          sx={{ maxWidth: "400px", mt: 2 }}
-        >
-          Building websites one line of code at a time
-        </AnimateFromLeftToRight>
-      </Box>
-      <Box sx={{ width: { xs: "390px", sm: "500px", md: "700px" } }}>
-        <Lottie animationData={skillsAnimation} style={{ width: "100%" }} />
-      </Box>
+      </Grid>
     </Container>
   );
 };
