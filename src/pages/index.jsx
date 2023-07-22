@@ -3,6 +3,7 @@ import React from "react";
 
 import Header from "../components/Header";
 import theme from '../theme/theme';
+import HomePage from "../components/home-page";
 
 const Index = () => {
 
@@ -10,7 +11,9 @@ const Index = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline /> 
       <Header/>
-      <Container maxWidth={false}></Container>
+      <Container maxWidth={false} disableGutters={ true }>
+        <HomePage/>
+      </Container>
     </ThemeProvider>
   );
 };
