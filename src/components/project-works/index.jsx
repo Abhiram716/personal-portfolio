@@ -1,13 +1,10 @@
-import { Box, Container, useTheme, useMediaQuery } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import React from "react";
 
 import FadeInTypography from "../AnimatedTypography/FadeInTypography";
 import Project from "./Project";
 
 const Works = () => {
-  const theme = useTheme();
-  const matchMd = useMediaQuery(theme.breakpoints.down("sm"));
-
   const projectsList = [
     {
       title: "Memory card Game",
@@ -41,51 +38,53 @@ const Works = () => {
       disableGutters={true}
       sx={{
         minHeight: "100vh",
-        mt: 20.5,
+        mt: 10.5,
         pb: 15,
         pt: 10,
-        // pl: matchX ? 5 : 10,
-        pl: matchMd ? 0 : 5,
+        pl: { xs: "0", sm: 5 },
         pr: 2,
       }}
     >
-      <Box
+      <Grid
+        container
+        justifyContent={"flex-start"}
+        // justifyContent={xs:"center",sm:"center"},
+        alignItems="center"
+        textAlign="center"
         sx={{
-          display: "flex",
-          justifyContent: matchMd ? "center" : "flex-start",
-          alignItems: "center",
-          textAlign: "center",
+          justifyContent: { xs: "center", sm: "center", md: "flex-start" },
         }}
       >
-        <FadeInTypography
-          variant={"h4"}
-          color={"white"}
-          duration={"1000"}
-          fromOpacity={0}
-          toOpacity={1}
-        >
-          Selected Works.
-        </FadeInTypography>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        <Grid item sx={{ ml: { md: 5 } }}>
+          <FadeInTypography
+            variant="h4"
+            color="white"
+            duration={1000}
+            fromOpacity={0}
+            toOpacity={1}
+          >
+            Selected Works.
+          </FadeInTypography>
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
       >
         {projectsList.map((project, i) => (
-          <Project
-            key={i}
-            title={project.title}
-            description={project.description}
-            src={project.src}
-            imgSrc={project.imgSrc}
-            rev={project.rev}
-          />
+          <Grid item key={i}>
+            <Project
+              title={project.title}
+              description={project.description}
+              src={project.src}
+              imgSrc={project.imgSrc}
+              rev={project.rev}
+            />
+          </Grid>
         ))}
-      </Box>
+      </Grid>
     </Container>
   );
 };
