@@ -1,10 +1,13 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, useTheme, useMediaQuery } from "@mui/material";
 import React from "react";
 
 import FadeInTypography from "../AnimatedTypography/FadeInTypography";
 import Project from "./Project";
 
 const Works = () => {
+  const theme = useTheme();
+  const matchMd = useMediaQuery(theme.breakpoints.down("sm"));
+
   const projectsList = [
     {
       title: "Memory card Game",
@@ -41,14 +44,15 @@ const Works = () => {
         mt: 20.5,
         pb: 15,
         pt: 10,
-        pl: 10,
+        // pl: matchX ? 5 : 10,
+        pl: matchMd ? 0 : 5,
         pr: 2,
       }}
     >
       <Box
         sx={{
           display: "flex",
-          justifyContent: "flex-start",
+          justifyContent: matchMd ? "center" : "flex-start",
           alignItems: "center",
           textAlign: "center",
         }}
