@@ -1,6 +1,9 @@
 import { Container, Grid } from "@mui/material";
 import React from "react";
 
+import mappingIss from "../../assets/images/mapping-iss.png";
+import memoryCardGame from "../../assets/images/memory-card-game.png";
+import shoppingCart from "../../assets/images/shopping-cart.png";
 import FadeInTypography from "../AnimatedTypography/FadeInTypography";
 import Project from "./Project";
 
@@ -12,7 +15,7 @@ const Works = () => {
         "Your goal is to select as many characters as possible without clicking on the same one twice. Your score is incremented by 1 each time you successfully pick a card you hadn't selected yet and it is reset to 0 when you select the same card twice.",
       src: "https://ubiquitous-llama-929433.netlify.app/",
       rev: false,
-      imgSrc: "",
+      imgSrc: memoryCardGame,
     },
     {
       title: "Mapping Iss",
@@ -20,7 +23,7 @@ const Works = () => {
         "This application points out the location of ISS. This application is built using vannila js and leaflet.js and main purpose of this project is to know the workings of fecth in JS",
       src: "https://astonishing-zabaione-fecb2e.netlify.app/",
       rev: true,
-      imgSrc: "",
+      imgSrc: mappingIss,
     },
     {
       title: "Shopping Cart",
@@ -28,7 +31,7 @@ const Works = () => {
         "A simple client side react app with functionality of adding items to cart and removing items from cart. This project is built using CSS, React",
       src: "https://unrivaled-begonia-507dac.netlify.app/",
       rev: false,
-      imgSrc: "",
+      imgSrc: shoppingCart,
     },
   ];
 

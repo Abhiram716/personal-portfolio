@@ -23,15 +23,19 @@ const Project = ({ title, description, rev, src, imgSrc }) => {
       <Box
         sx={{
           display: "block",
-          height: { xs: "300px", sm: "300px", md: "390px" },
+          height: {
+            xs: "300px",
+            sm: "300px",
+            md: "390px",
+          },
           width: {
             xs: "300px",
             sm: "300px",
-            md: "5000px",
-            lg: "500px",
-            xl: "500px",
+            md: "500px",
           },
-          bgcolor: "white",
+          backgroundImage: `url(${imgSrc})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           borderRadius: 2,
         }}
       />
@@ -41,7 +45,7 @@ const Project = ({ title, description, rev, src, imgSrc }) => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "left",
-          textAlign: { xs: "center", sm: "center", md: "center", lg: "left" },
+          textAlign: { xs: "center", sm: "center", md: "left", lg: "left" },
           mt: { xs: 5, sm: 5, xl: 0 },
           ml: { xs: 0, sm: 0, md: !rev ? 5 : 0 },
           mr: { xs: 0, sm: 0, md: rev ? 5 : 0 },
@@ -54,7 +58,6 @@ const Project = ({ title, description, rev, src, imgSrc }) => {
           variant={"h6"}
           color="white"
           sx={{
-            textAlign: "center",
             mt: 2,
             width: { xs: "350px", sm: "350px", md: "350px", lg: "500px" },
           }}
