@@ -1,4 +1,4 @@
-import { Box, Container, Grid, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
 import Lottie from "lottie-react";
 import React, { useRef } from "react";
 
@@ -9,9 +9,6 @@ import FadeInTypography from "../AnimatedTypography/FadeInTypography";
 
 const HomePage = () => {
   const welcomeAnimationRef = useRef(null);
-  const theme = useTheme();
-  const matchLg = useMediaQuery(theme.breakpoints.down("xl"));
-  const matchMd = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Container
@@ -19,8 +16,9 @@ const HomePage = () => {
       disableGutters={true}
       sx={{
         display: "flex",
-        flexDirection: matchLg ? "column" : "row",
-        justifyContent: matchLg ? "center" : "space-between",
+
+        flexDirection: { xs: "column", sm: "column", xl: "row" },
+        justifyContent: { xs: "center", sm: "center", xl: "space-between" },
         alignItems: "center",
         color: "white",
         minHeight: "100vh",
@@ -39,7 +37,11 @@ const HomePage = () => {
         sx={{ display: "flex", flexDirection: "column" }}
       >
         <Grid item>
-          <Box sx={{ width: matchMd ? "100px" : "150px" }}>
+          <Box
+            sx={{
+              width: { xs: "100px", sm: "100px", md: "150px" },
+            }}
+          >
             <Lottie
               lottieRef={welcomeAnimationRef}
               animationData={welcomeAnimation}
