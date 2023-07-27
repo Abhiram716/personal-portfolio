@@ -1,14 +1,14 @@
 import { Box, Container, Grid } from "@mui/material";
+import Lottie from "lottie-react";
 import React, { useRef } from "react";
-import { DotLottiePlayer } from "@dotlottie/react-player";
-import "@dotlottie/react-player/dist/index.css";
 
+import skillsAnimation from "../../assets/skillsAnimation.json";
+import welcomeAnimation from "../../assets/welcome.json";
 import AnimateFromLeftToRight from "../AnimatedTypography/AnimateFromLeftToRight";
 import FadeInTypography from "../AnimatedTypography/FadeInTypography";
 
 const HomePage = () => {
   const welcomeAnimationRef = useRef(null);
-  const skillsAnimationRef = useRef(null);
 
   return (
     <Container
@@ -42,13 +42,14 @@ const HomePage = () => {
               width: { xs: "100px", sm: "100px", md: "150px" },
             }}
           >
-            <DotLottiePlayer
-              src="https://lottie.host/4611e951-8866-4052-83c0-775f269fe0f5/e6CHz9jmYO.json"
-              style={{ width: "100%" }}
-              autoplay
-              loop
-              speed={1}
+            <Lottie
               lottieRef={welcomeAnimationRef}
+              animationData={welcomeAnimation}
+              style={{ width: "100%" }}
+              initialSegment={[45, 90]}
+              onLoadedImages={() => {
+                welcomeAnimationRef.current?.setSpeed(0.5);
+              }}
             />
           </Box>
         </Grid>
@@ -75,14 +76,7 @@ const HomePage = () => {
       </Grid>
       <Grid item xs={12} sm={6} md={7}>
         <Box sx={{ width: { xs: "350px", sm: "500px", md: "800px" } }}>
-          <DotLottiePlayer
-            src="https://lottie.host/401fbdab-b242-4fbf-9ead-64dc86c69722/413TWt6laW.lottie"
-            autoplay
-            loop
-            speed={1.5}
-            lottieRef={skillsAnimationRef}
-            style={{ width: "100%" }}
-          />
+          <Lottie animationData={skillsAnimation} style={{ width: "100%" }} />
         </Box>
       </Grid>
     </Container>
