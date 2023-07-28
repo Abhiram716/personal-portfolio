@@ -1,22 +1,27 @@
-import { Box, Container, Grid } from "@mui/material";
-import Lottie from "lottie-react";
-import React, { useRef } from "react";
-
-import skillsAnimation from "../../assets/skillsAnimation.json";
-import welcomeAnimation from "../../assets/welcome.json";
-import AnimateFromLeftToRight from "../AnimatedTypography/AnimateFromLeftToRight";
-import FadeInTypography from "../AnimatedTypography/FadeInTypography";
+import { Box, Container, Grid, Typography } from "@mui/material";
+import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
 
 const HomePage = () => {
-  const welcomeAnimationRef = useRef(null);
+  const data = useStaticQuery(graphql`
+    query Animations {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/skillsAnimation.md/" } }
+      ) {
+        nodes {
+          html
+        }
+      }
+    }
+  `);
 
+  console.log(data.allMarkdownRemark.nodes[0].html);
   return (
     <Container
       maxWidth={false}
       disableGutters={true}
       sx={{
         display: "flex",
-
         flexDirection: { xs: "column", sm: "column", xl: "row" },
         justifyContent: { xs: "center", sm: "center", xl: "space-between" },
         alignItems: "center",
@@ -37,46 +42,27 @@ const HomePage = () => {
         sx={{ display: "flex", flexDirection: "column" }}
       >
         <Grid item>
-          <Box
-            sx={{
-              width: { xs: "100px", sm: "100px", md: "150px" },
-            }}
-          >
-            <Lottie
-              lottieRef={welcomeAnimationRef}
-              animationData={welcomeAnimation}
-              style={{ width: "100%" }}
-              initialSegment={[45, 90]}
-              onLoadedImages={() => {
-                welcomeAnimationRef.current?.setSpeed(0.5);
-              }}
-            />
-          </Box>
-        </Grid>
-        <Grid item>
-          <FadeInTypography
-            duration={"1000"}
-            fromOpacity={"0"}
-            toOpacity={"1"}
-            variant={"h2"}
-            color={"white"}
-          >
+          <Typography variant={"h2"} color={"white"}>
             Hello, I am Abhiram.
-          </FadeInTypography>
+          </Typography>
         </Grid>
         <Grid item>
-          <AnimateFromLeftToRight
+          <Typography
             variant={"h4"}
             color={"white"}
             sx={{ maxWidth: "400px", mt: 2 }}
           >
             Building websites one line of code at a time
-          </AnimateFromLeftToRight>
+          </Typography>
         </Grid>
       </Grid>
       <Grid item xs={12} sm={6} md={7}>
         <Box sx={{ width: { xs: "350px", sm: "500px", md: "800px" } }}>
-          <Lottie animationData={skillsAnimation} style={{ width: "100%" }} />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.allMarkdownRemark.nodes[0].html,
+            }}
+          />
         </Box>
       </Grid>
     </Container>
