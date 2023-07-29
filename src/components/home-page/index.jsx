@@ -65,7 +65,7 @@ const HomePage = () => {
       </Box>
       <Box
         sx={{
-          width: { xs: "400px", sm: "500px", md: "800px" },
+          width: { xs: "350px", sm: "500px", md: "800px" },
           mt: { xs: 10 },
         }}
       >
