@@ -4,7 +4,9 @@ import React from "react";
 import dev from "../../images/dev.svg";
 
 const HomePage = () => {
+
   return (
+  
     <Container
       maxWidth={false}
       disableGutters={true}
