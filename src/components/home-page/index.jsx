@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 
 import dev from "../../images/dev.svg";
@@ -21,28 +21,6 @@ const HomePage = () => {
         pr: { lg: 20 },
       }}
     >
-      {/* <Grid
-        container
-        lg={4}
-        justifyContent="center"
-        alignItems="end"
-        textAlign="center"
-      >
-        <Grid item>
-          <Typography variant={"h2"} color={"white"}>
-            Hello, I am Abhiram.
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography
-            variant={"h4"}
-            color={"white"}
-            sx={{ maxWidth: "400px", mt: 2 }}
-          >
-            Building websites one line of code at a time
-          </Typography>
-        </Grid>
-      </Grid> */}
       <Box
         sx={{
           display: "flex",
@@ -69,7 +47,7 @@ const HomePage = () => {
           mt: { xs: 10 },
         }}
       >
-        <img src={dev} alt="" width={"100%"} />
+        <img src={dev} alt="" width="100%" height={"100%"} />
       </Box>
     </Container>
   );
