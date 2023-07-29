@@ -21,10 +21,7 @@
     "@mui/material": "^5.13.4",
     "gatsby": "^5.10.0",
     "gatsby-omni-font-loader": "^2.0.2",
-    "gatsby-remark-copy-linked-files": "^6.11.0",
-    "gatsby-remark-lottie": "^1.0.3",
     "gatsby-source-filesystem": "^5.11.0",
-    "gatsby-transformer-remark": "^6.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0"
