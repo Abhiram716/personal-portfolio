@@ -47,8 +47,8 @@ const Works = ({ data }) => {
         mt: 10.5,
         pb: 15,
         pt: 10,
-        pl: { xs: 1, sm: 5 },
-        pr: { xs: 1, sm: 5 },
+        pl: { xs: 1.5, sm: 5 },
+        pr: { xs: 1.5, sm: 5 },
       }}
     >
       <Grid
