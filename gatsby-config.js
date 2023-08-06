@@ -34,6 +34,7 @@ module.exports = {
     `gatsby-plugin-optimize-svgs`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -42,6 +43,12 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-scroll-reveal`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `About Projects`,
+        path: `${__dirname}/src/data/projects`,
+      },
+    },
   ],
 };

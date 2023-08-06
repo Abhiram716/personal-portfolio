@@ -5,36 +5,31 @@ import { getImage } from "gatsby-plugin-image";
 import Project from "./Project";
 
 const Works = ({ data }) => {
-  const edges = data.allFile.edges;
+  const projectImages = data.projectImages.edges;
+  const projectDetails = data.projectDescription.edges;
 
-  edges.map((edge) => {
-    console.log(edge.node);
-  });
   const projectsList = [
     {
-      title: "Mapping Iss",
-      description:
-        "This application points out the location of ISS. This application is built using vannila js and leaflet.js and main purpose of this project is to know the workings of fecth in JS",
+      title: projectDetails[1].node.frontmatter.title,
+      description: projectDetails[1].node.frontmatter.about,
       src: "https://astonishing-zabaione-fecb2e.netlify.app/",
       rev: false,
-      imgSrc: edges[1].node,
+      imgSrc: projectImages[2].node,
     },
     {
-      title: "Memory card Game",
-      description:
-        "Your goal is to select as many characters as possible without clicking on the same one twice. Your score is incremented by 1 each time you successfully pick a card you hadn't selected yet and it is reset to 0 when you select the same card twice.",
+      title: projectDetails[2].node.frontmatter.title,
+      description: projectDetails[2].node.frontmatter.about,
       src: "https://ubiquitous-llama-929433.netlify.app/",
       rev: true,
-      imgSrc: edges[2].node,
+      imgSrc: projectImages[1].node,
     },
 
     {
-      title: "Shopping Cart",
-      description:
-        "A simple client side react app with functionality of adding items to cart and removing items from cart. This project is built using CSS, React",
+      title: projectDetails[0].node.frontmatter.title,
+      description: projectDetails[0].node.frontmatter.about,
       src: "https://unrivaled-begonia-507dac.netlify.app/",
       rev: false,
-      imgSrc: edges[0].node,
+      imgSrc: projectImages[0].node,
     },
   ];
 

@@ -22,20 +22,8 @@ const Project = ({ title, description, rev, src, imgSrc }) => {
         overflow: "hidden",
       }}
     >
+      <GatsbyImage image={imgSrc} alt="" />
       <Box
-        data-sal={rev ? "slide-left" : "slide-right"}
-        data-sal-duration="2000"
-        data-sal-delay="300"
-        data-sal-easing="ease"
-        sal-out="ease"
-      >
-        <GatsbyImage image={imgSrc} alt="" />
-      </Box>
-      <Box
-        data-sal={!rev ? "slide-left" : "slide-right"}
-        data-sal-duration="2000"
-        data-sal-delay="300"
-        data-sal-easing="easeOutCubic"
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -60,13 +48,7 @@ const Project = ({ title, description, rev, src, imgSrc }) => {
         >
           {description}
         </Typography>
-        <Box
-          data-sal="fade"
-          data-sal-duration="2000"
-          data-sal-delay="700"
-          data-sal-easing="ease"
-          sx={{ mt: 4 }}
-        >
+        <Box sx={{ mt: 4 }}>
           <PrimaryButton href={src} endIcon={<AiOutlineRight />}>
             view work
           </PrimaryButton>
