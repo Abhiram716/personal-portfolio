@@ -10,15 +10,19 @@ const HomePage = () => {
       disableGutters={true}
       sx={{
         display: "flex",
-        flexDirection: { xs: "column", sm: "column", xl: "row" },
+        flexDirection: {
+          xs: "column-reverse",
+          sm: "column-reverse",
+          xl: "row",
+        },
         justifyContent: { xs: "center", sm: "center", xl: "space-between" },
         alignItems: "center",
         color: "white",
         minHeight: "100vh",
-        overflow: "auto",
-        pt: { xs: 15, md: 10 },
-        pl: { lg: 10 },
-        pr: { lg: 20 },
+        overflow: "hidden",
+        pt: { xs: 5, md: 10 },
+        pl: { xs: 2, lg: 10 },
+        pr: { xs: 2, lg: 20 },
       }}
     >
       <Box
@@ -43,8 +47,8 @@ const HomePage = () => {
       </Box>
       <Box
         sx={{
-          width: { xs: "350px", sm: "500px", md: "800px" },
-          mt: { xs: 10 },
+          width: { xs: "350px", sm: "400px", md: "600px", xl: "800px" },
+          mb: { xs: 5, sm: 10 },
         }}
       >
         <img src={dev} alt="" width="100%" height={"100%"} />

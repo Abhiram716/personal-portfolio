@@ -52,7 +52,7 @@ const Works = ({ data }) => {
                 description={about}
                 src={link}
                 imgSrc={imageSrc}
-                reverse={i % 2 == 0}
+                reverse={i % 2 === 0}
                 alt={title}
               />
             </Grid>
