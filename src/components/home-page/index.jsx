@@ -20,7 +20,7 @@ const HomePage = () => {
         color: "white",
         minHeight: "100vh",
         overflow: "hidden",
-        pt: { xs: 5, md: 10 },
+        pt: { xs: 2, md: 10 },
         pl: { xs: 2, lg: 10 },
         pr: { xs: 2, lg: 20 },
       }}
@@ -47,8 +47,8 @@ const HomePage = () => {
       </Box>
       <Box
         sx={{
-          width: { xs: "350px", sm: "400px", md: "600px", xl: "800px" },
-          mb: { xs: 5, sm: 10 },
+          width: { xs: "300px", sm: "400px", md: "600px", xl: "800px" },
+          mb: { xs: 2, sm: 10 },
         }}
       >
         <img src={dev} alt="" width="100%" height={"100%"} />
