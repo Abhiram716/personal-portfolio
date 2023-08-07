@@ -5,33 +5,7 @@ import { getImage } from "gatsby-plugin-image";
 import Project from "./Project";
 
 const Works = ({ data }) => {
-  const projectImages = data.projectImages.edges;
-  const projectDetails = data.projectDescription.edges;
-
-  const projectsList = [
-    {
-      title: projectDetails[1].node.frontmatter.title,
-      description: projectDetails[1].node.frontmatter.about,
-      src: "https://astonishing-zabaione-fecb2e.netlify.app/",
-      rev: false,
-      imgSrc: projectImages[2].node,
-    },
-    {
-      title: projectDetails[2].node.frontmatter.title,
-      description: projectDetails[2].node.frontmatter.about,
-      src: "https://ubiquitous-llama-929433.netlify.app/",
-      rev: true,
-      imgSrc: projectImages[1].node,
-    },
-
-    {
-      title: projectDetails[0].node.frontmatter.title,
-      description: projectDetails[0].node.frontmatter.about,
-      src: "https://unrivaled-begonia-507dac.netlify.app/",
-      rev: false,
-      imgSrc: projectImages[0].node,
-    },
-  ];
+  const projectDetails = data?.projectDetails?.edges;
 
   return (
     <Container
@@ -67,17 +41,19 @@ const Works = ({ data }) => {
         justifyContent="center"
         alignItems="center"
       >
-        {projectsList.map((project, i) => {
-          let image = getImage(project.imgSrc);
-
+        {projectDetails.map((project, i) => {
+          let { id } = project.node;
+          let { title, link, about, image } = project.node.frontmatter;
+          let imageSrc = getImage(image);
           return (
-            <Grid item key={i}>
+            <Grid item key={id}>
               <Project
-                title={project.title}
-                description={project.description}
-                src={project.src}
-                imgSrc={image}
-                rev={project.rev}
+                title={title}
+                description={about}
+                src={link}
+                imgSrc={imageSrc}
+                reverse={i % 2 == 0}
+                alt={title}
               />
             </Grid>
           );

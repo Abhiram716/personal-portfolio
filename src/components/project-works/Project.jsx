@@ -5,7 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 import PrimaryButton from "../Buttons/PrimaryButton";
 
-const Project = ({ title, description, rev, src, imgSrc }) => {
+const Project = ({ title, description, reverse, src, imgSrc, alt }) => {
   return (
     <Box
       sx={{
@@ -13,8 +13,8 @@ const Project = ({ title, description, rev, src, imgSrc }) => {
         flexDirection: {
           xs: "column",
           sm: "column",
-          md: rev ? "row-reverse" : "row",
-          lg: rev ? "row-reverse" : "row",
+          md: reverse ? "row-reverse" : "row",
+          lg: reverse ? "row-reverse" : "row",
         },
         justifyContent: "center",
         alignItems: "center",
@@ -22,7 +22,7 @@ const Project = ({ title, description, rev, src, imgSrc }) => {
         overflow: "hidden",
       }}
     >
-      <GatsbyImage image={imgSrc} alt="" />
+      <GatsbyImage image={imgSrc} alt={alt} />
       <Box
         sx={{
           display: "flex",
@@ -31,8 +31,8 @@ const Project = ({ title, description, rev, src, imgSrc }) => {
           alignItems: "left",
           textAlign: { xs: "center", sm: "center", md: "left", lg: "left" },
           mt: { xs: 5, sm: 5, xl: 0 },
-          ml: { xs: 0, sm: 0, md: !rev ? 5 : 0 },
-          mr: { xs: 0, sm: 0, md: rev ? 5 : 0 },
+          ml: { xs: 0, sm: 0, md: reverse ? 0 : 5 },
+          mr: { xs: 0, sm: 0, md: reverse ? 5 : 0 },
         }}
       >
         <Typography variant={"body1"} color="white">

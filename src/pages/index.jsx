@@ -8,8 +8,6 @@ import HomePage from "../components/home-page";
 import Works from "../components/project-works";
 
 const Index = ({ data }) => {
-  console.log(data);
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -24,22 +22,19 @@ const Index = ({ data }) => {
 
 export const query = graphql`
   query {
-    projectImages: allFile(filter: { relativeDirectory: { eq: "projects" } }) {
-      edges {
-        node {
-          childImageSharp {
-            gatsbyImageData(width: 500, height: 390, placeholder: BLURRED)
-          }
-        }
-      }
-    }
-    projectDescription: allMarkdownRemark {
+    projectDetails: allMarkdownRemark {
       edges {
         node {
           id
           frontmatter {
+            image {
+              childImageSharp {
+                gatsbyImageData(width: 500, height: 390, placeholder: BLURRED)
+              }
+            }
             about
             title
+            link
           }
         }
       }
