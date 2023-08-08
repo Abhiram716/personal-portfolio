@@ -1,14 +1,15 @@
-import { Container, Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import React from "react";
 import { getImage } from "gatsby-plugin-image";
 
 import Project from "./Project";
+import PrimaryContainer from "../Container/PrimaryContainer";
 
 const Works = ({ data }) => {
   const projectDetails = data?.projectDetails?.edges;
 
   return (
-    <Container
+    <PrimaryContainer
       maxWidth={false}
       disableGutters={true}
       sx={{
@@ -59,7 +60,7 @@ const Works = ({ data }) => {
           );
         })}
       </Grid>
-    </Container>
+    </PrimaryContainer>
   );
 };
 

@@ -1,11 +1,12 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 
 import dev from "../../images/dev.svg";
+import PrimaryContainer from "../Container/PrimaryContainer";
 
 const HomePage = () => {
   return (
-    <Container
+    <PrimaryContainer
       maxWidth={false}
       disableGutters={true}
       sx={{
@@ -47,13 +48,13 @@ const HomePage = () => {
       </Box>
       <Box
         sx={{
-          width: { xs: "300px", sm: "400px", md: "600px", xl: "800px" },
+          width: { xs: "300px", sm: "400px", md: "600px", xl: "650px" },
           mb: { xs: 2, sm: 10 },
         }}
       >
         <img src={dev} alt="" width="100%" height={"100%"} />
       </Box>
-    </Container>
+    </PrimaryContainer>
   );
 };
 
