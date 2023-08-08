@@ -4,6 +4,7 @@ import React from "react";
 
 import PrimaryContainer from "../components/Container/PrimaryContainer";
 import Header from "../components/Header";
+import Skills from "../components/Skills";
 import HomePage from "../components/home-page";
 import Works from "../components/project-works";
 import theme from "../theme/theme";
@@ -15,6 +16,7 @@ const Index = ({ data }) => {
       <Header />
       <PrimaryContainer maxWidth={false} disableGutters={true}>
         <HomePage />
+        <Skills />
         <Works data={data} />
       </PrimaryContainer>
     </ThemeProvider>
