@@ -15,7 +15,7 @@ const PrimaryButton = ({ endIcon, children, ...others }) => {
           borderColor: "white",
         },
         "&.MuiButton-outlined:hover": {
-          backgroundColor: theme.palette.primary.main,
+          backgroundColor: theme.palette.primary.light,
         },
       }}
     >

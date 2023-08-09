@@ -8,7 +8,6 @@ const HeaderItem = ({
   headerItemState,
   ...others
 }) => {
-  
   const theme = useTheme();
 
   return (
@@ -29,8 +28,8 @@ const HeaderItem = ({
           variant="h6"
           color={
             activeItem === `${headerItemState}`
-              ? theme.palette.primary.main
-              : "white"
+              ? theme.palette.secondary.main
+              : theme.palette.primary.contrastText
           }
         >
           {headerItemName}
