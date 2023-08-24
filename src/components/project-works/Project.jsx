@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -6,6 +6,8 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import PrimaryButton from "../Buttons/PrimaryButton";
 
 const Project = ({ title, description, reverse, src, imgSrc, alt }) => {
+  const theme = useTheme();
+
   return (
     <Box
       sx={{
@@ -18,8 +20,11 @@ const Project = ({ title, description, reverse, src, imgSrc, alt }) => {
         },
         justifyContent: "center",
         alignItems: "center",
-        mt: 12,
         overflow: "hidden",
+        mt: 12,
+        p: { xs: 3 },
+        borderRadius: 3,
+        backgroundColor: theme.palette.secondary.light,
       }}
     >
       <GatsbyImage image={imgSrc} alt={alt} />
@@ -28,22 +33,25 @@ const Project = ({ title, description, reverse, src, imgSrc, alt }) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignItems: "left",
-          textAlign: { xs: "center", sm: "center", md: "left", lg: "left" },
+          alignItems: "center",
+          textAlign: "left",
           mt: { xs: 5, sm: 5, xl: 0 },
           ml: { xs: 0, sm: 0, md: reverse ? 0 : 5 },
           mr: { xs: 0, sm: 0, md: reverse ? 5 : 0 },
         }}
       >
-        <Typography variant={"body1"} color="white">
+        <Typography
+          variant={"body1"}
+          color={theme.palette.primary.contrastText}
+        >
           {title}
         </Typography>
         <Typography
           variant={"h6"}
-          color="white"
+          color={theme.palette.primary.contrastText}
           sx={{
             mt: 2,
-            width: { xs: "350px", sm: "350px", md: "350px", lg: "500px" },
+            width: { xs: "250px", sm: "350px", md: "350px", lg: "500px" },
           }}
         >
           {description}

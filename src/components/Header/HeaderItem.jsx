@@ -28,7 +28,7 @@ const HeaderItem = ({
           variant="h6"
           color={
             activeItem === `${headerItemState}`
-              ? theme.palette.secondary.main
+              ? theme.palette.info.main
               : theme.palette.primary.contrastText
           }
         >
@@ -39,7 +39,7 @@ const HeaderItem = ({
             display: activeItem === `${headerItemState}` ? "block" : "none",
             height: "3px",
             width: "10px",
-            bgcolor: "white",
+            bgcolor: theme.palette.primary.contrastText,
           }}
         />
       </Box>

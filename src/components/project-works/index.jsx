@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { getImage } from "gatsby-plugin-image";
 
@@ -7,6 +7,7 @@ import PrimaryContainer from "../Container/PrimaryContainer";
 
 const Works = ({ data }) => {
   const projectDetails = data?.projectDetails?.edges;
+  const theme = useTheme();
 
   return (
     <PrimaryContainer
@@ -31,7 +32,7 @@ const Works = ({ data }) => {
         }}
       >
         <Grid item sx={{ ml: { md: 5 } }}>
-          <Typography variant="h4" color="white">
+          <Typography variant="h4" color={theme.palette.primary.contrastText}>
             Selected Works.
           </Typography>
         </Grid>

@@ -3,7 +3,8 @@ const palette = {
     main: "#030712",
   },
   secondary: {
-    main: "#B0C4DE",
+    main: "#111827",
+    light: "#1F2937",
   },
 };
 
