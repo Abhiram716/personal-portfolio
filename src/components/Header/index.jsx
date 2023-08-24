@@ -32,8 +32,8 @@ const Header = () => {
     <AppBar color="transparent" sx={{ backdropFilter: "blur(150px)" }}>
       <Toolbar
         sx={{
-          pt: 3,
-          pb: 3,
+          pt: 1,
+          pb: 1,
         }}
       >
         <Grid
