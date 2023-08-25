@@ -39,8 +39,8 @@ const Skills = () => {
         justifyContent: "center",
         pb: 10,
         pt: 10,
-        pl: { xs: 1.5, sm: 5 },
-        pr: { xs: 1.5, sm: 5 },
+        pl: { xs: 1.5, md: 5 },
+        pr: { xs: 1.5, md: 5 },
         mt: 5,
       }}
     >
@@ -51,28 +51,26 @@ const Skills = () => {
       >
         Skills:
       </Typography>
-      <Grid container columns={{ xs: 3, sm: 4 }} rowSpacing={4} sx={{ mt: 2 }}>
+      <Grid container sx={{ mt: 2 }} rowGap={5}>
         {skills.map((skill) => {
           return (
             <Grid
               item
-              xs={1}
-              sm={1}
-              key={skill.name}
+              xs={3}
+              sm={3}
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center",
                 alignItems: "center",
-                maxHeight: "100px",
-                maxWidth: "100px",
+                justifyContent: "center",
+                maxHeight: { xs: "70px", sm: "110px" },
+                maxWidth: "110px",
               }}
             >
               <img
                 src={skill.img}
                 alt="skill"
                 style={{
-                  boxSizing: "border-box",
                   height: "100%",
                   width: "100%",
                 }}
