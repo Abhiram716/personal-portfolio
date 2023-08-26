@@ -63,7 +63,7 @@ const Skills = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                maxHeight: { xs: "50px", sm: "110px" },
+                maxHeight: { xs: "50px", sm: "70px", md: "90px", lg: "110px" },
                 maxWidth: "110px",
               }}
             >
