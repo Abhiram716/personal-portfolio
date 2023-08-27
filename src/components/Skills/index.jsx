@@ -23,7 +23,6 @@ const Skills = () => {
     { img: css, name: "CSS" },
     { img: js, name: "Javascript" },
     { img: react, name: "React" },
-    { img: gatsby, name: "Gatsby" },
     { img: node, name: "Nodejs" },
     { img: express, name: "Expressjs" },
     { img: mongoDb, name: "MongoDb" },
@@ -66,8 +65,8 @@ const Skills = () => {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                maxHeight: { xs: "70px", sm: "70px", md: "90px", lg: "100px" },
-                width: { xs: "60px", sm: "70px", md: "90px", lg: "100px" },
+                maxHeight: "80px",
+                maxWidth: "80px",
               }}
             >
               <img
