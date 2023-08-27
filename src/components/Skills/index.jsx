@@ -37,34 +37,37 @@ const Skills = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        pb: 10,
-        pt: 10,
-        pl: { xs: 1.5, md: 5 },
-        pr: { xs: 1.5, md: 5 },
+        alignItems: "center",
+        pb: 5,
+        pt: 5,
+        pl: { xs: 1.5, sm: 5 },
+        pr: { xs: 1.5, sm: 5 },
         mt: 5,
       }}
     >
-      <Typography
-        variant="h4"
-        color={theme.palette.primary.contrastText}
-        sx={{ ml: 5 }}
-      >
-        Skills:
+      <Typography variant="h4" color={theme.palette.primary.contrastText}>
+        Skills
       </Typography>
-      <Grid container sx={{ mt: 2 }} rowGap={5}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: { xs: 3, md: 5 },
+          mt: 2,
+        }}
+      >
         {skills.map((skill) => {
           return (
-            <Grid
-              item
-              xs={3}
-              sm={3}
+            <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
                 justifyContent: "center",
-                maxHeight: { xs: "50px", sm: "70px", md: "90px", lg: "110px" },
-                maxWidth: "110px",
+                alignItems: "center",
+                maxHeight: { xs: "70px", sm: "70px", md: "90px", lg: "100px" },
+                width: { xs: "60px", sm: "70px", md: "90px", lg: "100px" },
               }}
             >
               <img
@@ -75,13 +78,13 @@ const Skills = () => {
                   width: "100%",
                 }}
               />
-              <Typography variant="body1" color="white" sx={{ mt: 0.5 }}>
+              <Typography variant="body2" color="white" sx={{ mt: 0.5 }}>
                 {skill.name}
               </Typography>
-            </Grid>
+            </Box>
           );
         })}
-      </Grid>
+      </Box>
     </SecondaryContainer>
   );
 };
