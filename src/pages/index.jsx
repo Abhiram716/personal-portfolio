@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import HomePage from "../components/home-page";
 import Works from "../components/project-works";
 import theme from "../theme/theme";
+import Skills from "../components/Skills";
 
 const Index = ({ data }) => {
   return (
@@ -15,6 +16,7 @@ const Index = ({ data }) => {
       <Header />
       <PrimaryContainer maxWidth={false} disableGutters={true}>
         <HomePage />
+        <Skills />
         <Works data={data} />
       </PrimaryContainer>
     </ThemeProvider>
