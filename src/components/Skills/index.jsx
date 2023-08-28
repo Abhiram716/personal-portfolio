@@ -1,10 +1,9 @@
-import { Box, Grid, Typography, useTheme } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import React from "react";
 
 import {
   css,
   express,
-  gatsby,
   git,
   html,
   java,
@@ -53,8 +52,8 @@ const Skills = () => {
           justifyContent: "center",
           alignItems: "center",
           flexWrap: "wrap",
-          gap: { xs: 3, md: 5 },
-          mt: 2,
+          gap: 5,
+          mt: 4,
         }}
       >
         {skills.map((skill) => {
@@ -65,8 +64,8 @@ const Skills = () => {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                maxHeight: "80px",
-                maxWidth: "80px",
+                maxHeight: { xs: "60px", sm: "80px" },
+                maxWidth: { xs: "60px", sm: "80px" },
               }}
             >
               <img
