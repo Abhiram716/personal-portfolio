@@ -1,10 +1,11 @@
-import { AppBar, Grid, Toolbar } from "@mui/material";
+import { AppBar, Grid, Toolbar, useTheme } from "@mui/material";
 import React, { useState } from "react";
 
 import HeaderItem from "./HeaderItem";
 
 const Header = () => {
   const [activeItem, setActiveItem] = useState("");
+  const theme = useTheme();
 
   const handleItemClick = (item) => {
     setActiveItem(item);
@@ -28,13 +29,11 @@ const Header = () => {
   ];
 
   return (
-    <AppBar>
+    <AppBar color="transparent" sx={{ backdropFilter: "blur(150px)" }}>
       <Toolbar
         sx={{
-          background:
-            "linear-gradient(180deg, #010208 16.39%, #010206 20.51%, #040008 24.79%, #010101 30.46%, #010101 34.11%, #010101 36.21%, #010101 100%)",
-          pt: 3,
-          pb: 3,
+          pt: 1,
+          pb: 1,
         }}
       >
         <Grid

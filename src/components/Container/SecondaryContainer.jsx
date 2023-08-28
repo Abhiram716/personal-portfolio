@@ -1,7 +1,7 @@
-import React from "react";
 import { Container, useTheme } from "@mui/material";
+import React from "react";
 
-const PrimaryContainer = ({ children, sx }) => {
+const SecondaryContainer = ({ children, sx }) => {
   const theme = useTheme();
   return (
     <Container
@@ -9,9 +9,9 @@ const PrimaryContainer = ({ children, sx }) => {
       disableGutters={true}
       sx={{
         "&.MuiContainer-root": {
-          backgroundColor: theme.palette.primary.main,
+          backgroundColor: theme.palette.secondary.main,
+          ...sx,
         },
-        ...sx,
       }}
     >
       {children}
@@ -19,4 +19,4 @@ const PrimaryContainer = ({ children, sx }) => {
   );
 };
 
-export default PrimaryContainer;
+export default SecondaryContainer;

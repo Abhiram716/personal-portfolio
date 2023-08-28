@@ -11,11 +11,11 @@ const PrimaryButton = ({ endIcon, children, ...others }) => {
       sx={{
         borderRadius: 12,
         "&.MuiButton-outlined": {
-          color: "white",
-          borderColor: "white",
+          color: theme.palette.primary.contrastText,
+          borderColor: theme.palette.primary.contrastText,
         },
         "&.MuiButton-outlined:hover": {
-          backgroundColor: theme.palette.primary.main,
+          backgroundColor: theme.palette.secondary.main,
         },
       }}
     >

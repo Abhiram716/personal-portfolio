@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { getImage } from "gatsby-plugin-image";
 
@@ -7,35 +7,27 @@ import PrimaryContainer from "../Container/PrimaryContainer";
 
 const Works = ({ data }) => {
   const projectDetails = data?.projectDetails?.edges;
+  const theme = useTheme();
 
   return (
     <PrimaryContainer
       maxWidth={false}
       disableGutters={true}
       sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
         minHeight: "100vh",
-        mt: 10.5,
         pb: 15,
         pt: 10,
         pl: { xs: 1.5, sm: 5 },
         pr: { xs: 1.5, sm: 5 },
       }}
     >
-      <Grid
-        container
-        justifyContent={"flex-start"}
-        alignItems="center"
-        textAlign="center"
-        sx={{
-          justifyContent: { xs: "center", sm: "center", md: "flex-start" },
-        }}
-      >
-        <Grid item sx={{ ml: { md: 5 } }}>
-          <Typography variant="h4" color="white">
-            Selected Works.
-          </Typography>
-        </Grid>
-      </Grid>
+      <Typography variant="h4" color={theme.palette.primary.contrastText}>
+        Selected Works.
+      </Typography>
       <Grid
         container
         flexDirection="column"

@@ -1,10 +1,11 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import React from "react";
 
 import dev from "../../images/dev.svg";
 import PrimaryContainer from "../Container/PrimaryContainer";
 
 const HomePage = () => {
+  const theme = useTheme();
   return (
     <PrimaryContainer
       maxWidth={false}
@@ -18,7 +19,7 @@ const HomePage = () => {
         },
         justifyContent: { xs: "center", sm: "center", xl: "space-between" },
         alignItems: "center",
-        color: "white",
+        color: theme.palette.primary.contrastText,
         minHeight: "100vh",
         overflow: "hidden",
         pt: { xs: 2, md: 10 },
@@ -35,12 +36,12 @@ const HomePage = () => {
           textAlign: "center",
         }}
       >
-        <Typography variant={"h2"} color={"white"}>
+        <Typography variant={"h2"} color={theme.palette.primary.contrastText}>
           Hello, I am Abhiram.
         </Typography>
         <Typography
           variant={"h4"}
-          color={"white"}
+          color={theme.palette.primary.contrastText}
           sx={{ maxWidth: "400px", mt: 2 }}
         >
           Building websites one line of code at a time
