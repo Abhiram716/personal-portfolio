@@ -71,7 +71,11 @@ const Skills = () => {
       >
         {skills.map((skill) => {
           return (
-            <a href={skill.redirect} target="_blank">
+            <a
+              href={skill.redirect}
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
               <Box
                 sx={{
                   display: "flex",
