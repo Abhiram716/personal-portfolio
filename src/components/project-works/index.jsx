@@ -14,6 +14,10 @@ const Works = ({ data }) => {
       maxWidth={false}
       disableGutters={true}
       sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
         minHeight: "100vh",
         pb: 15,
         pt: 10,
@@ -21,21 +25,9 @@ const Works = ({ data }) => {
         pr: { xs: 1.5, sm: 5 },
       }}
     >
-      <Grid
-        container
-        justifyContent={"flex-start"}
-        alignItems="center"
-        textAlign="center"
-        sx={{
-          justifyContent: { xs: "center", sm: "center", md: "flex-start" },
-        }}
-      >
-        <Grid item sx={{ ml: { md: 5 } }}>
-          <Typography variant="h4" color={theme.palette.primary.contrastText}>
-            Selected Works.
-          </Typography>
-        </Grid>
-      </Grid>
+      <Typography variant="h4" color={theme.palette.primary.contrastText}>
+        Selected Works.
+      </Typography>
       <Grid
         container
         flexDirection="column"
