@@ -1,5 +1,6 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import React from "react";
+import { Link } from "gatsby";
 
 import {
   css,
@@ -18,16 +19,28 @@ import SecondaryContainer from "../Container/SecondaryContainer";
 const Skills = () => {
   const theme = useTheme();
   const skills = [
-    { img: html, name: "Html" },
-    { img: css, name: "CSS" },
-    { img: js, name: "Javascript" },
-    { img: react, name: "React" },
-    { img: node, name: "Nodejs" },
-    { img: express, name: "Expressjs" },
-    { img: mongoDb, name: "MongoDb" },
-    { img: java, name: "Java" },
-    { img: sql, name: "Sql" },
-    { img: git, name: "Git" },
+    {
+      img: html,
+      name: "Html",
+      redirect: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    },
+    {
+      img: css,
+      name: "CSS",
+      redirect: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    },
+    {
+      img: js,
+      name: "Javascript",
+      redirect: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    },
+    { img: react, name: "React", redirect: "https://react.dev/" },
+    { img: node, name: "Nodejs", redirect: "https://nodejs.org/en" },
+    { img: express, name: "Expressjs", redirect: "https://expressjs.com/" },
+    { img: mongoDb, name: "MongoDb", redirect: "https://www.mongodb.com/" },
+    { img: java, name: "Java", redirect: "https://dev.java/" },
+    { img: sql, name: "Sql", redirect: "https://dev.mysql.com/doc/" },
+    { img: git, name: "Git", redirect: "https://git-scm.com/" },
   ];
   return (
     <SecondaryContainer
@@ -58,28 +71,31 @@ const Skills = () => {
       >
         {skills.map((skill) => {
           return (
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                maxHeight: { xs: "60px", sm: "80px" },
-                maxWidth: { xs: "60px", sm: "80px" },
-              }}
-            >
-              <img
-                src={skill.img}
-                alt="skill"
-                style={{
-                  height: "100%",
-                  width: "100%",
+            <a href={skill.redirect} target="_blank">
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  maxHeight: { xs: "60px", sm: "80px" },
+                  maxWidth: { xs: "60px", sm: "80px" },
+                  cursor: "pointer",
                 }}
-              />
-              <Typography variant="body2" color="white" sx={{ mt: 0.5 }}>
-                {skill.name}
-              </Typography>
-            </Box>
+              >
+                <img
+                  src={skill.img}
+                  alt="skill"
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                  }}
+                />
+                <Typography variant="body2" color="white" sx={{ mt: 0.5 }}>
+                  {skill.name}
+                </Typography>
+              </Box>
+            </a>
           );
         })}
       </Box>
