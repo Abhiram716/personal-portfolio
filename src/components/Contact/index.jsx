@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, IconButton, Tooltip, Typography, useTheme } from "@mui/material";
 import { AiOutlineMail } from "react-icons/ai";
 import { BiCopy } from "react-icons/bi";
@@ -8,12 +8,26 @@ import {
   BsLinkedin,
   BsStackOverflow,
 } from "react-icons/bs";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import PrimaryContainer from "../Container/PrimaryContainer";
 import contact from "../../images/contact-section/contact.svg";
 
 const ContactSection = () => {
+  const [copyEmail, setCopyEmail] = useState(false);
+  const [copyPhoneNumber, setCopyPhoneNumber] = useState(false);
   const theme = useTheme();
+  const email = "a4abhiram125@gmail.com";
+  const phoneNumber = "+916301236321";
+  const handleCopyEmail = () => {
+    setCopyEmail(true);
+    setCopyPhoneNumber(false);
+  };
+  const handleCopyPhoneNumber = () => {
+    setCopyPhoneNumber(true);
+    setCopyEmail(false);
+  };
+
   return (
     <PrimaryContainer
       sx={{
@@ -65,13 +79,15 @@ const ContactSection = () => {
             </IconButton>
 
             <Typography variant="h6" color={theme.palette.primary.contrastText}>
-              a4abhiram125@gmail.com
+              {email}
             </Typography>
-            <Tooltip title="copy" arrow>
-              <IconButton>
-                <BiCopy color={theme.palette.primary.contrastText} />
-              </IconButton>
-            </Tooltip>
+            <CopyToClipboard text={email} onCopy={handleCopyEmail}>
+              <Tooltip title={copyEmail ? "copied!" : "copy"} arrow>
+                <IconButton>
+                  <BiCopy color={theme.palette.primary.contrastText} />
+                </IconButton>
+              </Tooltip>
+            </CopyToClipboard>
           </Box>
           <Box
             sx={{
@@ -84,13 +100,15 @@ const ContactSection = () => {
               <BsTelephone color={theme.palette.primary.contrastText} />
             </IconButton>
             <Typography variant="h6" color={theme.palette.primary.contrastText}>
-              +916301236321
+              {phoneNumber}
             </Typography>
-            <Tooltip title="copy" arrow>
-              <IconButton>
-                <BiCopy color={theme.palette.primary.contrastText} />
-              </IconButton>
-            </Tooltip>
+            <CopyToClipboard text={phoneNumber} onCopy={handleCopyPhoneNumber}>
+              <Tooltip title={copyPhoneNumber ? "copied!" : "copy"} arrow>
+                <IconButton>
+                  <BiCopy color={theme.palette.primary.contrastText} />
+                </IconButton>
+              </Tooltip>
+            </CopyToClipboard>
           </Box>
 
           <Box>
