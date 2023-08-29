@@ -15,20 +15,35 @@ const ContactSection = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        pb: 5,
-        pt: 5,
+        pb: 2,
+        pt: 2,
         pl: { xs: 1.5, sm: 5 },
         pr: { xs: 1.5, sm: 5 },
-        mt: 5,
       }}
     >
       <Typography variant="h4" color={theme.palette.primary.contrastText}>
         Get in touch
       </Typography>
       <Box
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{
+          display: "flex",
+          flexDirection: {
+            xs: "column",
+            sm: "column",
+            md: "column",
+            lg: "row",
+          },
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
-        <Box sx={{ height: "500px", width: "500px", mr: 10 }}>
+        <Box
+          sx={{
+            height: { xs: "250x", sm: "400px", md: "500px", lg: "600px" },
+            width: { xs: "250px", sm: "400px", md: "500px", lg: "600px" },
+            mr: { xs: 0, sm: 0, md: 0, lg: 5, xl: 10 },
+          }}
+        >
           <img
             src={contact}
             alt="contact"
@@ -41,6 +56,9 @@ const ContactSection = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "flex-start",
+            backgroundColor: theme.palette.secondary.light,
+            p: { xs: 2, sm: 2 },
+            borderRadius: 3,
           }}
         >
           <Typography variant="h6" color={theme.palette.primary.contrastText}>
@@ -50,7 +68,11 @@ const ContactSection = () => {
 
           <ContactInfo />
           <Box>
-            <Typography variant="h6" color={theme.palette.primary.contrastText}>
+            <Typography
+              variant="h6"
+              color={theme.palette.primary.contrastText}
+              sx={{ mt: 3 }}
+            >
               you can also find me on these platforms!
             </Typography>
             <Socials />

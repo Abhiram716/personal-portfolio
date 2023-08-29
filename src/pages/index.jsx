@@ -15,11 +15,7 @@ const Index = ({ data }) => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
-      <PrimaryContainer
-        maxWidth={false}
-        disableGutters={true}
-        // sx={{ minHeight: "100vh" }}
-      >
+      <PrimaryContainer>
         <HomePage />
         <Skills />
         <Works data={data} />
