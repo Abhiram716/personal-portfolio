@@ -8,16 +8,22 @@ import HomePage from "../components/home-page";
 import Works from "../components/project-works";
 import theme from "../theme/theme";
 import Skills from "../components/Skills";
+import ContactSection from "../components/Contact";
 
 const Index = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
-      <PrimaryContainer maxWidth={false} disableGutters={true}>
+      <PrimaryContainer
+        maxWidth={false}
+        disableGutters={true}
+        // sx={{ minHeight: "100vh" }}
+      >
         <HomePage />
         <Skills />
         <Works data={data} />
+        <ContactSection />
       </PrimaryContainer>
     </ThemeProvider>
   );
