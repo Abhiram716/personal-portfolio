@@ -49,7 +49,11 @@ const ContactInfo = () => {
             text={contact.data}
             onCopy={contact.eventHandleMethod}
           >
-            <Tooltip title={contact.state ? "copied!" : "copy"} arrow>
+            <Tooltip
+              title={contact.state ? "copied!" : "copy"}
+              arrow
+              enterTouchDelay={0}
+            >
               <IconButton>
                 <BiCopy color={theme.palette.primary.contrastText} />
               </IconButton>

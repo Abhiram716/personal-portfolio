@@ -1,5 +1,5 @@
 import { IconButton, Tooltip, useTheme } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { BsGithub, BsLinkedin, BsStackOverflow } from "react-icons/bs";
 
 const Socials = () => {
@@ -32,7 +32,7 @@ const Socials = () => {
           rel="noopener noreferrer"
           style={{ textDecoration: "none" }}
         >
-          <Tooltip title={social.title} arrow>
+          <Tooltip title={social.title} arrow enterTouchDelay={0}>
             <IconButton>{social.icon}</IconButton>
           </Tooltip>
         </a>
