@@ -1,33 +1,13 @@
-import React, { useState } from "react";
-import { Box, IconButton, Tooltip, Typography, useTheme } from "@mui/material";
-import { AiOutlineMail } from "react-icons/ai";
-import { BiCopy } from "react-icons/bi";
-import {
-  BsTelephone,
-  BsGithub,
-  BsLinkedin,
-  BsStackOverflow,
-} from "react-icons/bs";
-import { CopyToClipboard } from "react-copy-to-clipboard";
+import { Box, Typography, useTheme } from "@mui/material";
+import React from "react";
 
-import PrimaryContainer from "../Container/PrimaryContainer";
 import contact from "../../images/contact-section/contact.svg";
+import PrimaryContainer from "../Container/PrimaryContainer";
+import ContactInfo from "./ContactInfo";
+import Socials from "./Socials";
 
 const ContactSection = () => {
-  const [copyEmail, setCopyEmail] = useState(false);
-  const [copyPhoneNumber, setCopyPhoneNumber] = useState(false);
   const theme = useTheme();
-  const email = "a4abhiram125@gmail.com";
-  const phoneNumber = "+916301236321";
-  const handleCopyEmail = () => {
-    setCopyEmail(true);
-    setCopyPhoneNumber(false);
-  };
-  const handleCopyPhoneNumber = () => {
-    setCopyPhoneNumber(true);
-    setCopyEmail(false);
-  };
-
   return (
     <PrimaryContainer
       sx={{
@@ -67,71 +47,13 @@ const ContactSection = () => {
             Feel free to reach out to me if you're looking for a developer, have
             a query, or simply want to connect.
           </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <IconButton>
-              <AiOutlineMail color={theme.palette.primary.contrastText} />
-            </IconButton>
 
-            <Typography variant="h6" color={theme.palette.primary.contrastText}>
-              {email}
-            </Typography>
-            <CopyToClipboard text={email} onCopy={handleCopyEmail}>
-              <Tooltip title={copyEmail ? "copied!" : "copy"} arrow>
-                <IconButton>
-                  <BiCopy color={theme.palette.primary.contrastText} />
-                </IconButton>
-              </Tooltip>
-            </CopyToClipboard>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <IconButton>
-              <BsTelephone color={theme.palette.primary.contrastText} />
-            </IconButton>
-            <Typography variant="h6" color={theme.palette.primary.contrastText}>
-              {phoneNumber}
-            </Typography>
-            <CopyToClipboard text={phoneNumber} onCopy={handleCopyPhoneNumber}>
-              <Tooltip title={copyPhoneNumber ? "copied!" : "copy"} arrow>
-                <IconButton>
-                  <BiCopy color={theme.palette.primary.contrastText} />
-                </IconButton>
-              </Tooltip>
-            </CopyToClipboard>
-          </Box>
-
+          <ContactInfo />
           <Box>
             <Typography variant="h6" color={theme.palette.primary.contrastText}>
               you can also find me on these platforms!
             </Typography>
-            <Box>
-              <Tooltip title="Github" arrow>
-                <IconButton>
-                  <BsGithub color={theme.palette.primary.contrastText} />
-                </IconButton>
-              </Tooltip>
-              <Tooltip title="Linkedin" arrow>
-                <IconButton>
-                  <BsLinkedin color={theme.palette.primary.contrastText} />
-                </IconButton>
-              </Tooltip>
-              <Tooltip title="Stackoverflow" arrow>
-                <IconButton>
-                  <BsStackOverflow color={theme.palette.primary.contrastText} />
-                </IconButton>
-              </Tooltip>
-            </Box>
+            <Socials />
           </Box>
         </Box>
       </Box>
