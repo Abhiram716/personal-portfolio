@@ -8,6 +8,7 @@ import HomePage from "../components/home-page";
 import Works from "../components/project-works";
 import theme from "../theme/theme";
 import Skills from "../components/Skills";
+import About from "../components/About";
 
 const Index = ({ data }) => {
   return (
@@ -18,6 +19,7 @@ const Index = ({ data }) => {
         <HomePage />
         <Skills />
         <Works data={data} />
+        <About data={data} />
       </PrimaryContainer>
     </ThemeProvider>
   );
@@ -40,6 +42,11 @@ export const query = graphql`
             link
           }
         }
+      }
+    }
+    Oragnization: file(extension: { eq: "png" }, name: { eq: "jtc" }) {
+      childImageSharp {
+        gatsbyImageData(width: 500, height: 500, placeholder: BLURRED)
       }
     }
   }
