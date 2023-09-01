@@ -1,34 +1,21 @@
-import { Box, IconButton, Tooltip, Typography, useTheme } from "@mui/material";
-import React, { useState } from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
+import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
-import { BiCopy } from "react-icons/bi";
 import { BsTelephone } from "react-icons/bs";
+import CopyToClipboarad from "./CopyToClipboarad";
 
 const ContactInfo = () => {
-  const [copyEmail, setCopyEmail] = useState(false);
-  const [copyPhoneNumber, setCopyPhoneNumber] = useState(false);
   const theme = useTheme();
-  const handleCopyEmail = () => {
-    setCopyEmail(true);
-    setCopyPhoneNumber(false);
-  };
-  const handleCopyPhoneNumber = () => {
-    setCopyPhoneNumber(true);
-    setCopyEmail(false);
-  };
+  const { contrastText } = theme.palette.primary;
+
   const contactInfo = [
     {
-      icon: <AiOutlineMail color={theme.palette.primary.contrastText} />,
+      icon: <AiOutlineMail color={contrastText} />,
       data: "a4abhiram125@gmail.com",
-      eventHandleMethod: handleCopyEmail,
-      state: copyEmail,
     },
     {
-      icon: <BsTelephone color={theme.palette.primary.contrastText} />,
+      icon: <BsTelephone color={contrastText} />,
       data: "+916301236321",
-      eventHandleMethod: handleCopyPhoneNumber,
-      state: copyPhoneNumber,
     },
   ];
   return (
@@ -42,23 +29,10 @@ const ContactInfo = () => {
           }}
         >
           <IconButton>{contact.icon}</IconButton>
-          <Typography variant="h6" color={theme.palette.primary.contrastText}>
+          <Typography variant="h6" color={contrastText}>
             {contact.data}
           </Typography>
-          <CopyToClipboard
-            text={contact.data}
-            onCopy={contact.eventHandleMethod}
-          >
-            <Tooltip
-              title={contact.state ? "copied!" : "copy"}
-              arrow
-              enterTouchDelay={0}
-            >
-              <IconButton>
-                <BiCopy color={theme.palette.primary.contrastText} />
-              </IconButton>
-            </Tooltip>
-          </CopyToClipboard>
+          <CopyToClipboarad text={contact.data} />
         </Box>
       ))}
     </>

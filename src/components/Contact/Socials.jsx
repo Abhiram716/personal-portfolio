@@ -1,22 +1,23 @@
 import { IconButton, Tooltip, useTheme } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import { BsGithub, BsLinkedin, BsStackOverflow } from "react-icons/bs";
 
 const Socials = () => {
   const theme = useTheme();
+  const { contrastText } = theme.palette.primary;
   const socialsData = [
     {
-      icon: <BsGithub color={theme.palette.primary.contrastText} />,
+      icon: <BsGithub color={contrastText} />,
       title: "Github",
       redirect: "https://github.com/Abhiram716",
     },
     {
-      icon: <BsLinkedin color={theme.palette.primary.contrastText} />,
+      icon: <BsLinkedin color={contrastText} />,
       title: "Linkedin",
       redirect: "https://www.linkedin.com/in/abhiram716",
     },
     {
-      icon: <BsStackOverflow color={theme.palette.primary.contrastText} />,
+      icon: <BsStackOverflow color={contrastText} />,
       title: "Stackoverflow",
       redirect: "https://stackoverflow.com/users/15342341/abhi-ram",
     },
@@ -26,7 +27,7 @@ const Socials = () => {
     <>
       {socialsData.map((social, index) => (
         <a
-          key={index}
+          key={social.title}
           href={social.redirect}
           target="_blank"
           rel="noopener noreferrer"
