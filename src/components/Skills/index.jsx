@@ -73,7 +73,6 @@ const Skills = () => {
             <a
               href={skill.redirect}
               target="_blank"
-              rel="noopener noreferrer"
               style={{ textDecoration: "none" }}
             >
               <Box

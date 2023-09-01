@@ -11,11 +11,6 @@ const Typography = {
   h4: {
     fontFamily: "'kurale',sans-serif",
   },
-  h6: {
-    "@media(max-width:600px)": {
-      fontSize: "1rem",
-    },
-  },
 };
 
 export default Typography;

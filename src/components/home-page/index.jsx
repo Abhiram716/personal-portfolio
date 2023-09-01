@@ -22,7 +22,7 @@ const HomePage = () => {
         color: theme.palette.primary.contrastText,
         minHeight: "100vh",
         overflow: "hidden",
-        pt: { xs: 5, md: 10 },
+        pt: { xs: 2, md: 10 },
         pl: { xs: 2, lg: 10 },
         pr: { xs: 2, lg: 20 },
       }}
@@ -49,7 +49,7 @@ const HomePage = () => {
       </Box>
       <Box
         sx={{
-          width: { xs: "300px", sm: "500px", md: "550px", xl: "600px" },
+          width: { xs: "300px", sm: "400px", md: "600px", xl: "650px" },
           mb: { xs: 2, sm: 10 },
         }}
       >
