@@ -29,7 +29,7 @@ const Header = () => {
   ];
 
   return (
-    <AppBar color="transparent" sx={{ backdropFilter: "blur(150px)" }}>
+    <AppBar color="transparent" sx={{ backdropFilter: "blur(20px)" }}>
       <Toolbar
         sx={{
           pt: 1,
