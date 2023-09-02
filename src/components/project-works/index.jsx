@@ -19,8 +19,8 @@ const Works = ({ data }) => {
         justifyContent: "center",
         alignItems: "center",
         minHeight: "100vh",
-        pb: 15,
-        pt: 10,
+        pb: 5,
+        pt: 5,
         pl: { xs: 1.5, sm: 5 },
         pr: { xs: 1.5, sm: 5 },
       }}

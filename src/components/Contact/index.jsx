@@ -15,8 +15,8 @@ const ContactSection = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        pb: 2,
-        pt: 2,
+        pb: 5,
+        pt: 5,
         pl: { xs: 1.5, sm: 5 },
         pr: { xs: 1.5, sm: 5 },
       }}

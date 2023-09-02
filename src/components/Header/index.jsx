@@ -1,11 +1,10 @@
-import { AppBar, Grid, Toolbar, useTheme } from "@mui/material";
+import { AppBar, Grid, Toolbar } from "@mui/material";
 import React, { useState } from "react";
 
 import HeaderItem from "./HeaderItem";
 
 const Header = () => {
   const [activeItem, setActiveItem] = useState("");
-  const theme = useTheme();
 
   const handleItemClick = (item) => {
     setActiveItem(item);
