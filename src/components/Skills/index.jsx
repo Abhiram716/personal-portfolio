@@ -71,6 +71,7 @@ const Skills = () => {
         {skills.map((skill) => {
           return (
             <a
+              key={skill.name}
               href={skill.redirect}
               target="_blank"
               rel="noopener noreferrer"

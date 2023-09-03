@@ -20,8 +20,9 @@ const ContactInfo = () => {
   ];
   return (
     <>
-      {contactInfo.map((contact) => (
+      {contactInfo.map((contact, index) => (
         <Box
+          key={index}
           sx={{
             display: "flex",
             justifyContent: "center",

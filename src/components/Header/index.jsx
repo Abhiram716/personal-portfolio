@@ -42,10 +42,9 @@ const Header = () => {
           alignItems="center"
           spacing={{ lg: 20, md: 15, sm: 15, xs: 4 }}
         >
-          {headerItemProps.map((item, index) => (
-            <Grid item>
+          {headerItemProps.map((item) => (
+            <Grid item key={item.headerItemName}>
               <HeaderItem
-                key={index}
                 activeItem={activeItem}
                 handleItemClick={handleItemClick}
                 {...item}
