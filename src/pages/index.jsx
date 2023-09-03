@@ -27,7 +27,9 @@ const Index = ({ data }) => {
           <section id="about">
             <About data={data} />
           </section>
-          <ContactSection />
+          <section id="contact">
+            <ContactSection />
+          </section>
         </PrimaryContainer>
       </Layout>
     </ThemeProvider>
