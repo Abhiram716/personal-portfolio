@@ -17,10 +17,16 @@ const Index = ({ data }) => {
       <CssBaseline />
       <Layout>
         <PrimaryContainer>
-          <HomePage />
+          <section id="home">
+            <HomePage />
+          </section>
           <Skills />
-          <Works data={data} />
-          <About data={data} />
+          <section id="work">
+            <Works data={data} />
+          </section>
+          <section id="about">
+            <About data={data} />
+          </section>
           <ContactSection />
         </PrimaryContainer>
       </Layout>

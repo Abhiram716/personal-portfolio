@@ -14,15 +14,18 @@ const Header = () => {
     {
       headerItemName: "HOME",
       headerItemState: "home",
+      navigate: "#home",
     },
     {
       headerItemName: "WORK",
       headerItemState: "work",
+      navigate: "#work",
       sx: { ml: 4 },
     },
     {
       headerItemName: "ABOUT",
       headerItemState: "about",
+      navigate: "#about",
       sx: { ml: 4 },
     },
   ];
