@@ -50,5 +50,15 @@ module.exports = {
         path: `${__dirname}/src/data/projects`,
       },
     },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: `Abhiram Kantipudi | Full stack developer`,
+        short_name: `Abhi`,
+        background_color: `#030712`,
+        display: "minimal-ui",
+        icon: "src/images/favicon.png",
+      },
+    },
   ],
 };
