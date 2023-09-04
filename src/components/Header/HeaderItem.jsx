@@ -2,6 +2,8 @@ import { Typography, useTheme } from "@mui/material";
 import { Link } from "gatsby";
 import React from "react";
 
+import "../../styles/header/activeStyleLink.css";
+
 const HeaderItem = () => {
   const theme = useTheme();
   const headerItemProps = [
@@ -34,8 +36,8 @@ const HeaderItem = () => {
     <>
       {headerItemProps.map((item) => (
         <Link
-          to={item.navigate}
-          key={item}
+          to={`/${item.navigate}`}
+          key={item.headerItemName}
           style={{
             textDecoration: "none",
           }}
@@ -43,7 +45,12 @@ const HeaderItem = () => {
           <Typography
             variant="body1"
             color={theme.palette.primary.contrastText}
-            sx={{ mr: item?.mr }}
+            sx={{
+              mr: item?.mr,
+              "&:hover": {
+                color: theme.palette.info.main,
+              },
+            }}
           >
             {item.headerItemName}
           </Typography>
