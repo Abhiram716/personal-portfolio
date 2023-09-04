@@ -2,8 +2,6 @@ import { Typography, useTheme } from "@mui/material";
 import { Link } from "gatsby";
 import React from "react";
 
-import "../../styles/header/activeStyleLink.css";
-
 const HeaderItem = () => {
   const theme = useTheme();
   const headerItemProps = [
@@ -36,7 +34,7 @@ const HeaderItem = () => {
     <>
       {headerItemProps.map((item) => (
         <Link
-          to={`/${item.navigate}`}
+          to={item.navigate}
           key={item.headerItemName}
           style={{
             textDecoration: "none",
