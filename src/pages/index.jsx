@@ -2,27 +2,36 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { graphql } from "gatsby";
 import React from "react";
 
+import About from "../components/About";
+import ContactSection from "../components/Contact";
 import PrimaryContainer from "../components/Container/PrimaryContainer";
-import Header from "../components/Header";
+import Layout from "../components/Layout/Layout";
+import Skills from "../components/Skills";
 import HomePage from "../components/home-page";
 import Works from "../components/project-works";
 import theme from "../theme/theme";
-import Skills from "../components/Skills";
-import ContactSection from "../components/Contact";
-import About from "../components/About";
 
 const Index = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header />
-      <PrimaryContainer>
-        <HomePage />
-        <Skills />
-        <Works data={data} />
-        <About data={data} />
-        <ContactSection />
-      </PrimaryContainer>
+      <Layout>
+        <PrimaryContainer>
+          <section id="home">
+            <HomePage />
+          </section>
+          <Skills />
+          <section id="work">
+            <Works data={data} />
+          </section>
+          <section id="about">
+            <About data={data} />
+          </section>
+          <section id="contact">
+            <ContactSection />
+          </section>
+        </PrimaryContainer>
+      </Layout>
     </ThemeProvider>
   );
 };

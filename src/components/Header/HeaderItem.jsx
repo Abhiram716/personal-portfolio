@@ -1,49 +1,60 @@
-import { Box, ButtonBase, Typography, useTheme } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
+import { Link } from "gatsby";
 import React from "react";
 
-const HeaderItem = ({
-  activeItem, //state variable
-  headerItemName, // name of the item
-  handleItemClick,
-  headerItemState,
-  ...others
-}) => {
+const HeaderItem = () => {
   const theme = useTheme();
+  const headerItemProps = [
+    {
+      headerItemName: "HOME",
+      headerItemState: "home",
+      navigate: "#home",
+      mr: 4,
+    },
+    {
+      headerItemName: "WORK",
+      headerItemState: "work",
+      navigate: "#work",
+      mr: 4,
+    },
+    {
+      headerItemName: "ABOUT",
+      headerItemState: "about",
+      navigate: "#about",
+      mr: 4,
+    },
+    {
+      headerItemName: "CONTACT",
+      headerItemState: "contact",
+      navigate: "#contact",
+    },
+  ];
 
   return (
-    <ButtonBase
-      disableRipple
-      sx={{ cursor: "pointer", ...others.sx }}
-      onClick={() => handleItemClick(headerItemState)}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Typography
-          variant="h6"
-          color={
-            activeItem === `${headerItemState}`
-              ? theme.palette.info.main
-              : theme.palette.primary.contrastText
-          }
-        >
-          {headerItemName}
-        </Typography>
-        <Box
-          sx={{
-            display: activeItem === `${headerItemState}` ? "block" : "none",
-            height: "3px",
-            width: "10px",
-            bgcolor: theme.palette.primary.contrastText,
+    <>
+      {headerItemProps.map((item) => (
+        <Link
+          to={item.navigate}
+          key={item.headerItemName}
+          style={{
+            textDecoration: "none",
           }}
-        />
-      </Box>
-    </ButtonBase>
+        >
+          <Typography
+            variant="body1"
+            color={theme.palette.primary.contrastText}
+            sx={{
+              mr: item?.mr,
+              "&:hover": {
+                color: theme.palette.info.main,
+              },
+            }}
+          >
+            {item.headerItemName}
+          </Typography>
+        </Link>
+      ))}
+    </>
   );
 };
 
