@@ -3,8 +3,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Personal portfolio`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Abhiram Kantipudi | Full stack developer`,
+    description: `Portfolio website of Abhiram Kantipudi`,
+    author: `Abhiram Kantipudi <a4abhiram125@gmail.com>`,
+    siteUrl: `https://abhiram716.github.io/personal-portfolio/`,
   },
   plugins: [
     {
