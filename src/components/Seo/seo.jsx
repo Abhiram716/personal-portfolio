@@ -15,7 +15,7 @@ const Seo = ({ children }) => {
     `
   );
 
-  const title = site.siteMetaData?.title;
+  const title = site.siteMetadata?.title;
   const description = site.siteMetadata?.description;
 
   return (
