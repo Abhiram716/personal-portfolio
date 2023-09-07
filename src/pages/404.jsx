@@ -34,7 +34,7 @@ const PageNotFound = () => {
           color: theme.palette.primary.contrastText,
           minHeight: "100vh",
           overflow: "hidden",
-          pt: { xs: 5, md: 10 },
+          pt: { xs: 2, md: 10 },
           pl: { xs: 2, lg: 20 },
           pr: { xs: 2, lg: 20 },
         }}
