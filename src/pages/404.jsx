@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  Box,
-  ThemeProvider,
-  CssBaseline,
-  Typography,
-  Button,
-} from "@mui/material";
+import { Box, ThemeProvider, CssBaseline, Typography } from "@mui/material";
 import { Link } from "gatsby";
-import { AiOutlineRight } from "react-icons/ai";
 
 import error from "../images/404.svg";
 import SecondaryContainer from "../components/Container/SecondaryContainer";
@@ -18,6 +11,7 @@ import Seo from "../components/Seo/seo";
 const PageNotFound = () => {
   const { contrastText } = theme.palette.primary;
   const { main } = theme.palette.info;
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -44,44 +38,35 @@ const PageNotFound = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            alignItems: "left",
             mt: { xs: 5, sm: 5, md: 0 },
           }}
         >
           <Typography
             variant="h2"
             color={main}
-            textAlign={"left"}
             fontFamily={"'Poppins',sans-serif"}
           >
             Opps!...
           </Typography>
-          <Typography variant="h4" color={main} textAlign={"left"}>
+          <Typography variant="h4" color={main}>
             Page not found
           </Typography>
-          <Typography
-            color={contrastText}
-            sx={{ mt: 1 }}
-            variant="h6"
-            textAlign={"left"}
-          >
+          <Typography color={contrastText} sx={{ mt: 1 }} variant="h6">
             The page you are looking for doesn’t exist.
           </Typography>
-          <Link to="/">
-            <Button
-              endIcon={<AiOutlineRight />}
+          <Link to="/" style={{ textDecorationColor: main }}>
+            <Typography
+              variant="h6"
+              color={contrastText}
               sx={{
-                backgroundColor: main,
-                color: contrastText,
                 "&:hover": {
-                  backgroundColor: contrastText,
                   color: main,
                 },
-                mt: 1,
-                width: "200px",
               }}
             >
-              Home
-            </Button>
+              Go back to Home
+            </Typography>
           </Link>
         </Box>
         <Box
