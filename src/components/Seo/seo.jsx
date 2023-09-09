@@ -1,7 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
-const Seo = ({ children }) => {
+const Seo = ({ titleProp, children }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -15,7 +15,7 @@ const Seo = ({ children }) => {
     `
   );
 
-  const title = site.siteMetadata?.title;
+  const title = titleProp || site.siteMetadata?.title;
   const description = site.siteMetadata?.description;
 
   return (
