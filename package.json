@@ -19,7 +19,7 @@
     "@emotion/styled": "^11.11.0",
     "@mdx-js/react": "^2.3.0",
     "@mui/material": "^5.13.4",
-    "gatsby": "^5.10.0",
+    "gatsby": "^5.13.7",
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.12.0",
